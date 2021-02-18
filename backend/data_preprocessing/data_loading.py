@@ -15,6 +15,8 @@ from sklearn.preprocessing import StandardScaler, OneHotEncoder
 from backend.util.static import PATHS, dataset, params
 from backend.util.helper_functions import get_ct_feature_names
 from backend.util.util import clean_folder
+import plotly.express as px
+import plotly.offline as py 
 
 
 german_credit_dataset = dataset[params["dataset"]]
@@ -63,29 +65,29 @@ def explore_data(df_credit):
     print("Shape of the data")
     print(df_credit.info())
 
-    print("Looking unique values")
-    print(df_credit.nunique())
+    #print("Looking unique values")
+    #print(df_credit.nunique())
 
     print("Header")
     print(df_credit.head())
 
     # Prints unique data values
-    print("Checking account : ", df_credit['Checking account'].unique())
-    print("Credit history : ", df_credit['Credit history'].unique())
-    print("Saving accounts : ", df_credit['Saving accounts'].unique())
-    print("Length of current employment : ", df_credit['Length of current employment'].unique())
+    # print("Checking account : ", df_credit['Checking account'].unique())
+    # print("Credit history : ", df_credit['Credit history'].unique())
+    # print("Saving accounts : ", df_credit['Saving accounts'].unique())
+    # print("Length of current employment : ", df_credit['Length of current employment'].unique())
 
-    print("Purpose : ", df_credit.Purpose.unique())
-    #print("Sex : ", df_credit['Sex'].unique())
-    print("Marital status : ", df_credit['Marital status'].unique())
-    print("Other debtors / guarantors : ", df_credit['Other debtors / guarantors'].unique())
-    print("Property ", df_credit['Property'].unique())
-    #print("Other installment plans  : ", df_credit['Other installment plans'].unique())
-    print("Housing : ", df_credit.Housing.unique())
-    print("Job : ", df_credit.Job.unique())
-    print("Telephone : ", df_credit.Telephone.unique())
-    print("Foreign Worker : ", df_credit['Foreign Worker'].unique())
-    #print("Risk : ", df_credit['Risk'].unique())
+    # print("Purpose : ", df_credit.Purpose.unique())
+    # print("Sex : ", df_credit['Sex'].unique())
+    # print("Marital status : ", df_credit['Marital status'].unique())
+    # print("Other debtors / guarantors : ", df_credit['Other debtors / guarantors'].unique())
+    # print("Property ", df_credit['Property'].unique())
+    # print("Other installment plans  : ", df_credit['Other installment plans'].unique())
+    # print("Housing : ", df_credit.Housing.unique())
+    # print("Job : ", df_credit.Job.unique())
+    # print("Telephone : ", df_credit.Telephone.unique())
+    # print("Foreign Worker : ", df_credit['Foreign Worker'].unique())
+    # print("Risk : ", df_credit['Risk'].unique())
 
 
 
@@ -111,13 +113,13 @@ def create_training_split(df_credit):
 def data_preparation(df_credit):
     """Small dataset fixes"""
 
-    #df_credit.loc[(df_credit.Job == 0), 'Job'] = "unskilled and non-resident"
-   # df_credit.loc[(df_credit.Job == 1), 'Job'] = "unskilled and resident"
-   # df_credit.loc[(df_credit.Job == 2), 'Job'] = "skilled"
-   # df_credit.loc[(df_credit.Job == 3), 'Job'] = "highly skilled"
+    # df_credit.loc[(df_credit.Job == 0), 'Job'] = "unskilled and non-resident"
+    # df_credit.loc[(df_credit.Job == 1), 'Job'] = "unskilled and resident"
+    # df_credit.loc[(df_credit.Job == 2), 'Job'] = "skilled"
+    # df_credit.loc[(df_credit.Job == 3), 'Job'] = "highly skilled"
 
-    df_credit["Saving accounts"] = df_credit["Saving accounts"].astype(str)
-    df_credit["Checking account"] = df_credit["Checking account"].astype(str)
+    # df_credit["Saving accounts"] = df_credit["Saving accounts"].astype(str)
+    # df_credit["Checking account"] = df_credit["Checking account"].astype(str)
 
     # interval = (18, 25, 35, 60, 120)
     # categories = ['Student', 'Young', 'Adult', 'Senior']
@@ -207,9 +209,9 @@ def one_hot_encoder_old(df_credit, nan_as_category=False):
 def data_exploration(df_credit):
     """Data exploration with seaborn"""
 
-    # ax = sns.countplot(x="Risk", data=df_credit)
-   #  plt.show()
-
+    ax = sns.countplot(x="Risk", data=df_credit)
+    plt.show()
+    
     #ax = sns.countplot(data=df_credit, x="Sex", hue="Risk")
     # plt.show()
 
@@ -217,23 +219,23 @@ def data_exploration(df_credit):
     # plt.show()
 
     # ax = sns.histplot(data=df_credit, x="Age", hue="Risk", element="step")
-   #  plt.show()
-
-     #ax = sns.histplot(data=df_credit, x="Duration", hue="Risk", element="step")
     # plt.show()
 
-    #ax = sns.countplot(data=df_credit, x="Purpose", hue="Risk")
-    #plt.show()
+    # ax = sns.histplot(data=df_credit, x="Duration", hue="Risk", element="step")
+    # plt.show()
 
-   #  ax = sns.countplot(data=df_credit, x="Saving accounts", hue="Risk")
-   #  plt.show()
+    # ax = sns.countplot(data=df_credit, x="Purpose", hue="Risk")
+    # plt.show()
 
-    #ax = sns.pairplot(data=df_credit, hue="Risk", kind="kde")
-    #ax.savefig("pairplot_all.png")
-    #plt.show()  # Takes a while to plot
+    # ax = sns.countplot(data=df_credit, x="Saving accounts", hue="Risk")
+    # plt.show()
+
+    # ax = sns.pairplot(data=df_credit, hue="Risk", kind="kde")
+    # ax.savefig("pairplot_all.png")
+    # plt.show()  # Takes a while to plot
 
     # plt.figure(figsize=(14, 12))
     # sns.heatmap(df_credit.astype(float).corr(),linewidths=0.1,vmax=1.0,
-   #         square=True,  linecolor='white', annot=True)
-   #  plt.show()
+    # square=True,  linecolor='white', annot=True)
+    # plt.show()
 

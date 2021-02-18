@@ -10,8 +10,8 @@ def predict(model, X_test, y_test):
  X_train_encoded, y_train, X_test_encoded, y_test, encoder = load_encoded_data()
  y_hat = model.predict(X_test_encoded)
 
- print("Accuracy Score: ", "\n")
- print(accuracy_score(y_test, y_hat))
+ #print("Accuracy Score: ", "\n")
+ print("Accuracy Score: ", accuracy_score(y_test, y_hat))
 #  print("Confusion Matrix:", "\n")
 #  print(confusion_matrix(y_test, y_hat))
 #  print("Classification Report: ", "\n")

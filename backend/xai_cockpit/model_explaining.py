@@ -109,7 +109,25 @@ def explain_with_shap_local(X_test, model, model_name, feature_names, test_insta
 
         plt.savefig(PATHS["03_data_outputs"] + model_name + "_shap_force_plot.png")
         plt.close()
+def explain_with_shap_local_dp(X_test, model, model_name, feature_names, test_instance):
+    """Local explanations using shap"""
+    explainer = get_shap_explainer(model, model_name)
+    shap_values = explainer.shap_values(X_test)
 
+    dependence_plot = True
+    if dependence_plot:
+        shap.dependence_plot("Checking_account",
+                        shap_values,
+                        X_test,
+                        # feature_names=feature_names,
+                        show=False,
+                        matplotlib=True,
+                        text_rotation=90,
+                        # figsize=(25, 10)
+                        )
+
+        plt.savefig(PATHS["03_data_outputs"] + model_name + "_shap_dependence_plot.png")
+        plt.close()
 
 def explain_with_shap_global(X_train, model, model_name):
     """Global explanations using shap"""

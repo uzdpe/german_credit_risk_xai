@@ -39,7 +39,7 @@ def model_selection(model_name):
     elif model_name == "Logistic Regression":
         chosen_model = LogisticRegression()
     elif model_name == "Decision Tree":
-        chosen_model = DecisionTreeClassifier()
+        chosen_model = DecisionTreeClassifier(criterion='gini', max_depth=3)
     elif model_name == "Random Forest":
         chosen_model = RandomForestClassifier(max_depth=50, max_features=10, n_estimators=200, random_state=2)
     elif model_name == "Support Vector Machine":
