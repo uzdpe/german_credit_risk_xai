@@ -7,6 +7,7 @@ from backend.model_building import model_training
 from backend.xai_cockpit import model_explaining
 from backend.util.static import PATHS, dataset, params
 from backend.util.util import get_the_filenames
+from backend.inference.predict import *
 
 
 def initialize_routes(api):
@@ -22,6 +23,7 @@ def initialize_routes(api):
     api.add_resource(GetInstances, "/get_instances")
     api.add_resource(ReturnTrainedModels, "/return_trained_models")
     api.add_resource(LocalExplanation, "/local_explanation")
+    api.add_resource(LoadDataTable, "/data_table")
 
 
 class Initialization(Resource):
@@ -134,8 +136,6 @@ class DisplayForcePlot(Resource):
         reqparse_args = reqparse.RequestParser()
         reqparse_args.add_argument("chosen_model", type=str)
         reqparse_args.add_argument("chosen_instance", type=str)  # not yet needed
-        args = reqparse_args.parse_args()
-
         directory = PATHS["03_data_outputs"]
         filename = args["chosen_model"] + "_" + "shap_force_plot.png"
 
@@ -158,6 +158,21 @@ class DisplayLimePlot(Resource):
         filename = args["chosen_model"] + "_" + "lime_plot.png"
 
         print(directory + filename)
+
+        try:
+            return send_from_directory(directory, filename=filename, as_attachment=True)
+            # return send_file(prediction_dir + args["pred_name"])   # works both
+        except FileNotFoundError:
+            abort(404)
+class LoadDataTable(Resource):
+    """provides data table for prediction"""
+    def post(self):
+        dataTable(X_test, test_instance=10)
+
+        directory = PATHS["03_data_outputs"]
+        filename = "data_table.png"
+        #reqparse_args.add_argument("chosen_instance", type=str)
+        print(filename)
 
         try:
             return send_from_directory(directory, filename=filename, as_attachment=True)

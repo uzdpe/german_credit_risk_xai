@@ -1,5 +1,8 @@
 <template>
     <v-app>
+    <div>
+            <p class="header">Globale Modellerklärung mithilfe von Shapley Values aus der Spieltheorie </p>
+        </div>
         <v-container fluid>
             <div>
                 <v-select
@@ -18,11 +21,37 @@
                          alt="no Image"
                          height="800px">
                 </v-col>
-
+                
 
 
             </div>
+            
+
         </v-container>
+
+        <div>  
+             <p class="header"> Zusatzinformation:
+             </p>
+        </div>       
+        <div>  
+            <p class="text"> Interpretation: Ein hoher Wert für Checking Account führt zu einer Erhöhung der Zuordnung zur Klasse 1(=gutes Risiko)
+
+            </p>
+        </div>
+        <div>
+            <p class="text"> Der globale Feature-Impact identifiziert, welche Features in einem Datensatz den größten positiven oder negativen Effekt auf die Ergebnisse eines ML Modells haben.
+            </p>
+        </div>
+        
+        <div>
+            <p class="text"> Shapley-Werte helfen bei der Zuordnung des marginalen "Beitrags" jedes der Merkmale und der “Richtung" des Merkmals, das die abhängige Variable beeinflusst
+.
+            </p>
+        </div>
+        <div>
+            <img src="../assets/shapley.png" alt="Data_Input"   class="picture" >
+        </div>
+        <br><br>
     </v-app>
 </template>
 
@@ -86,6 +115,36 @@
 </script>
 
 <style scoped>
+
+    .text {
+        float: left;
+        background: rgba(255, 255, 255, 0.76);
+        color: #000032;
+        text-align: left;
+        font-size: 20px;
+        padding-top: 20px;
+        padding-left: 50px;
+    }
+    .header{
+        float:left;
+        background: rgba(255, 255, 255, 0.76);
+        color: #000032;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        padding-top: 0px;
+        padding-left: 50px;
+    }
+    .picture {
+        float: center;
+        background: rgba(255, 255, 255, 0.76);
+        color: #000032;
+        text-align: left;
+        font-size: 50px;
+        padding-top: 20px;
+        padding-left: 100px;
+        
+    }
 
 
 </style>

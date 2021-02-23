@@ -15,6 +15,8 @@ from xgboost import plot_importance
 from xgboost import XGBClassifier
 import matplotlib.pyplot as plt
 from backend.xai_cockpit.model_explaining import *
+from backend.inference.predict import *
+import dataframe_image as dfi
 
 
 
@@ -26,8 +28,8 @@ if __name__ == '__main__':
  initialize()
  df=load_data(type="raw")
  s
- explore_data(df)
- #data_exploration(df)
+# explore_data(df)
+ data_exploration(df)
 
 
  X_train_encoded, y_train, X_test_encoded, y_test, encoder = data_loading.load_encoded_data()
@@ -46,6 +48,8 @@ if __name__ == '__main__':
  print(X_test_encoded.iloc[i])
  #print(y_test.iloc[i])
  #print(X_test)
+ dataTable(df, i)
+
  print(df.iloc[i])
  y_hat = model.predict(X_test_encoded)
  p_pred=model.predict_proba(X_test_encoded)

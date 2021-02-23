@@ -1,10 +1,88 @@
 <template>
     <v-app>
 
-        
+        <div>
+            <p class="header"> 1. Datengrundlage </p>
+            <br>
+        </div>
 
         <div>
-            <p class="header">  Initialisierung </p>
+            <p class="text"> Die folgende Tabelle beschreibt die Datengrundlage und gibt Aufschluss über die Variablen, die der Algorithmus verwendet und aus Diskrimierungsgründen ausgeschlossen werden.</p>
+        </div> 
+
+        
+        <div>
+            <img class="datatable" src="../assets/data_table.png" alt="Data_Input"  >
+            <img class="datatable" src="../assets/data_table2.png" alt="Data_Input" >
+        </div>
+        <br>
+        <div>
+            <p class="header"> 2.Explorative Datenanalyse </p>
+            <br>
+        </div>
+        <div>
+            <p class="text"> Der folgende Graph zeigt, dass 70 % der Beobachtungen ein gutes Kreditrisiko aufweisen, während 30 % ein schlechtes Kreditrisiko haben:</p>
+            <br>
+        </div>
+        <div>
+            <img class="picture"  src="../assets/distribution.png" alt="Data_Input"  width=800, height=500, >
+        </div>
+        <div>
+            <p class="text"> Der folgende Graph zeigt, dass die Dauer (Kreditlaufzeit) meist innerhalb von 40 Monaten seit der Kreditvergabe liegt:</p>
+            <br>
+        </div>
+        <div>
+            <img class="picture" src="../assets/duration.jpg" alt="Data_Input"  width=800, height=500, >
+        </div>
+        <div>
+            <p class="text"> Der folgende Graph zeigt, dass die meisten Kredite für die Verwendungszwecke "Radio/TV", "Car (new)" und "Furniture/Equipment" beantragt werden:</p>
+            <br>
+        </div>
+        
+        <div>
+            <img class="picture" src="../assets/purpose.jpg" alt="Data_Input"  width=800, height=500, >
+        </div>
+        <div>
+            <p class="text"> Der folgende Graph zeigt, dass die meisten Antragsteller mit Eigenheim ein gutes Kreditrisiko besitzen:</p>
+            <br>
+        </div>
+        <div>
+            <img class="picture" src="../assets/housing.jpg" alt="Data_Input"  width=800, height=500, >
+        </div>
+        <div>
+            <p class="text"> Der folgende Graph zeigt, dass die meisten Antragsteller zwischen 20 und 50 Jahre alt sind:</p>
+            <br>
+        </div>
+        <div>
+            <img class="picture" src="../assets/age.jpg" alt="Data_Input"  width=800, height=500, >
+        </div>
+        <div>
+            <p class="text"> Der folgende Graph zeigt, dass die meisten Kreditbeträge unter 10.000€ bleiben :</p>
+            <br>
+        </div>
+        <div>
+            <img class="picture" src="../assets/creditamount.jpg" alt="Data_Input"  width=800, height=500, >
+        </div>
+        <div>
+            <p class="text"> Der folgende Graph zeigt, dass die meisten Kreditbewerber weniger als 100 € Sparguthaben besitzen :</p>
+            <br>
+        </div>
+        <div>
+            <img class="picture" src="../assets/savingaccounts.jpg" alt="Data_Input"  width=800, height=500, >
+        </div>
+        <div>
+            <p class="text"> Der folgende Graph zeigt, dass die meisten Kreditbewerber kein Girokonto besitzen :</p>
+            <br>
+        </div>
+        <div>
+            <img class="picture" src="../assets/checkingaccount.png" alt="Data_Input"  width=800, height=500, >
+        </div>
+
+        <br>
+        <br>
+
+        <div>
+            <p class="header"> 2. Initialisierung </p>
             <br>
         </div> 
         <div>
@@ -22,7 +100,7 @@
         </div> 
 
         <div>
-            <p class="header"> Modell Trainieren </p>
+            <p class="header"> 3. Logistische Regression Trainieren </p>
             <br>
         </div> 
         <div>
@@ -41,13 +119,13 @@
             <p class="response_text"> {{msg_model}} </p>
             <br>
             <br>
-            <p class="response_text"> Die folgenden Modelle wurden trainiert: {{trained_models}} </p>
+            
 
         </div>
         <br>
         
         <div>
-            <p class="header"> Gehen Sie weiter auf <b>"3. Prediction"</b>
+            <p class="text">Nach Abschluss der Testphase gehen Sie weiter auf <b>"4. Training"</b>
             </p>
         </div>
 
@@ -70,8 +148,7 @@
                 trained_models:"",
 
                 chosen_model: "",
-                possible_models: ["Extreme Gradient Boosting", "Logistic Regression", "Decision Tree",
-                "Random Forest", "Support Vector Machine"],
+                possible_models: ["Logistic Regression"],
             }
         },
 
@@ -158,6 +235,13 @@
         font-weight: bold;
         padding-top: 0px;
         padding-left: 50px;
+    }
+    .picture{
+        float: center;
+        margin-left: 200px;
+        margin-right: 200px;
+        margin-top: 20px;
+        width: 50%;
     }
     
 

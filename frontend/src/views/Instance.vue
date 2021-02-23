@@ -1,5 +1,9 @@
 <template>
     <v-app>
+         <div>
+            <p class="header">Lokale Erklärung mithilfe von Lokal interpretierbaren model-agnostischen Erklärungen (LIME)
+             </p>
+        </div>
         <v-container fluid>
             <div>
                 <v-select
@@ -44,6 +48,19 @@
 
             </div>
         </v-container>
+
+        <div>  
+             <p class="header"> Zusatzinformation:
+             </p>
+        </div>       
+        <div>  
+            <p class="text"> LIME approximiert das Black Box Modell aneinem Datenpunkt (ausgewählte Instanz) mit einem Surrogatmodell, welches lokal linear und somit interpretbierbar ist. 
+            </p>
+        </div>
+        
+        <div>
+            <img src="../assets/lime.png" alt="Data_Input"   class="picture" >
+        </div>
     </v-app>
 </template>
 
@@ -144,6 +161,35 @@
 </script>
 
 <style scoped>
+.text {
+        float: left;
+        background: rgba(255, 255, 255, 0.76);
+        color: #000032;
+        text-align: left;
+        font-size: 20px;
+        padding-top: 20px;
+        padding-left: 50px;
+    }
+    .header{
+        float:left;
+        background: rgba(255, 255, 255, 0.76);
+        color: #000032;
+        text-align: center;
+        font-size: 25px;
+        font-weight: bold;
+        padding-top: 0px;
+        padding-left: 50px;
+    }
+    .picture {
+        float: center;
+        background: rgba(255, 255, 255, 0.76);
+        color: #000032;
+        text-align: left;
+        font-size: 50px;
+        padding-top: 20px;
+        padding-left: 100px;
+        
+    }
 
 
 </style>
