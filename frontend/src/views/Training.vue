@@ -1,10 +1,12 @@
 <template>
     <v-app>
 
-        
+        <div>
+            <p class="header">  <u>Training </u> </p>
+        </div>
 
         <div>
-            <p class="header">  Initialisierung </p>
+            <p class="header"> 1. Initialisierung </p>
             <br>
         </div> 
         <div>
@@ -22,7 +24,7 @@
         </div> 
 
         <div>
-            <p class="header"> Modell Trainieren </p>
+            <p class="header"> 2. Modell Trainieren </p>
             <br>
         </div> 
         <div>
@@ -47,9 +49,13 @@
         <br>
         
         <div>
-            <p class="header"> Gehen Sie weiter auf <b>"3. Prediction"</b>
+            <p class="text"> Gehen Sie weiter auf <a href="http://localhost:8080/prediction" ><b>weiter zur Modellvorhersage (Prediction)</b></a>
             </p>
+            
+
         </div>
+        <br>
+        <br>
 
     </v-app>
 </template>

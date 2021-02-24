@@ -1,10 +1,15 @@
 <template>
     <v-app>
          <div>
-            <p class="header">Lokale Erklärung mithilfe von Lokal interpretierbaren model-agnostischen Erklärungen (LIME)
+            <p class="header"> <u>Lokale Erklärung mithilfe von Lokal interpretierbaren model-agnostischen Erklärungen (LIME) </u>
+             </p>
+        </div>
+        <div>
+            <p class="text"> Wähle das trainierte Modell, sowie den ausgesuchten Kreditbewerber aus:
              </p>
         </div>
         <v-container fluid>
+        
             <div>
                 <v-select
                         :items="trained_models"
@@ -54,13 +59,21 @@
              </p>
         </div>       
         <div>  
-            <p class="text"> LIME approximiert das Black Box Modell aneinem Datenpunkt (ausgewählte Instanz) mit einem Surrogatmodell, welches lokal linear und somit interpretbierbar ist. 
+            <p class="text"> LIME approximiert das Black Box Modell an einem Datenpunkt (ausgewählte Instanz) mit einem Surrogatmodell, welches lokal linear und somit interpretbierbar ist. 
             </p>
         </div>
         
         <div>
             <img src="../assets/lime.png" alt="Data_Input"   class="picture" >
         </div>
+       <div>
+            <p class="text"> Gehen Sie <a href="http://localhost:8080/survey" ><b>weiter zum Ende </b></a>
+            </p>
+             
+
+        </div>
+        <br>
+        <br>
     </v-app>
 </template>
 

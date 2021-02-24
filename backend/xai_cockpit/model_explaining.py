@@ -46,7 +46,7 @@ def main_global(model_name):
     df_credit = data_loading.data_preparation(df_credit)
     df_credit, categorical_encoding, categorical_encoding_label = data_loading.encoding(df_credit)
 
-    explain_with_shap_global(X_test_encoded, model, model_name)
+    explain_with_shap_global(X_test_encoded , model, model_name)
 
 
 def main_local(model_name, chosen_instance=1):

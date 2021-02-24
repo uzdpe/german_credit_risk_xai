@@ -1,10 +1,15 @@
 <template>
     <v-app>
      <div>
-            <p class="header">  Vorhersage </p>
+            <p class="header"> <u>Prediction</u>  </p>
+            <br>
             <br>
         </div>
-
+        
+            <div>
+            <p class="header"> 1. Auswahl Kreditbewerber  </p>
+            <br>
+        </div>
         <div>
             <p class="text">Für folgenden Bewerber wird eine Vorhersage getroffen.</p>
         </div> 
@@ -41,7 +46,7 @@
         </v-container>
 
         <div>
-            <p class="header">  Vorhersage </p>
+            <p class="header">  2. Vorhersage </p>
             <br>
         </div>
 
@@ -66,9 +71,11 @@
         </div>
         <br>
         <br>
-         <div>
-            <p class="text"> Schauen Sie sich die Erklärungsansätze unter <b>"3.1 Globale Explanation"</b> und <b>"3.2 Lokale Explanation"</b> an.
+        <div>
+            <p class="text"> Gehen Sie <a href="http://localhost:8080/global" ><b>weiter zur globalen Erklärung</b></a>
             </p>
+            
+
         </div>
         <br>
         <br>

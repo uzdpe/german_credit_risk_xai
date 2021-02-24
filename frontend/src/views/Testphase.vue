@@ -1,13 +1,17 @@
 <template>
     <v-app>
-
+        <div>
+            <p class="header">  <u>Testphase </u></p>
+        </div>
         <div>
             <p class="header"> 1. Datengrundlage </p>
             <br>
         </div>
 
         <div>
-            <p class="text"> Die folgende Tabelle beschreibt die Datengrundlage und gibt Aufschluss über die Variablen, die der Algorithmus verwendet und aus Diskrimierungsgründen ausgeschlossen werden.</p>
+            <p class="text">  Wir haben einen deutschen Kreditrisiko-Datensatz ausgewählt, der eine Stichprobe von n = 1000 Beobachtungen klassifiziert, ob ein Antragsteller ein gutes oder schlechtes Kreditrisiko besitzt. 
+            Die folgende Tabelle beschreibt die Datengrundlage und gibt Aufschluss über die Variablen, die der Algorithmus verwendet und die aus Diskrimierungsgründen ausgeschlossen werden:
+            </p>
         </div> 
 
         
@@ -113,7 +117,7 @@
                       filled
                       required
                       label="CHOOSE MODEL"
-                      @input="train_model()"
+                      @input="train_model(),make_prediction()"
             ></v-select>
             <br>
             <p class="response_text"> {{msg_model}} </p>
@@ -125,7 +129,7 @@
         <br>
         
         <div>
-            <p class="text">Nach Abschluss der Testphase gehen Sie weiter auf <b>"4. Training"</b>
+            <p class="text">Nach Abschluss der Testphase gehen Sie  <a href="http://localhost:8080/training" ><b>weiter zum Modell Training</b></a> 
             </p>
         </div>
 
@@ -180,6 +184,17 @@
                 // training with model
                 this.msg_model = "training..."
                 axios.post("http://127.0.0.1:5000/train_new_model", {
+                    chosen_model: this.chosen_model
+                })
+                    .then(response => {
+                        this.msg_model= response.data
+                    })
+                this.return_trained_models_timeout()
+            },
+             makeprediction() {
+                // training with model
+                this.msg_model = "training..."
+                axios.post("http://127.0.0.1:5000/make_prediction", {
                     chosen_model: this.chosen_model
                 })
                     .then(response => {

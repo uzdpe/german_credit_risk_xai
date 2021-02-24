@@ -1,6 +1,6 @@
 from flask_restful import Resource, reqparse
 from flask import send_from_directory, abort
-from sklearn.metrics import accuracy_score
+from sklearn.metrics import accuracy_score,auc,roc_auc_score
 
 from backend.data_preprocessing import data_loading
 from backend.model_building import model_training
@@ -56,6 +56,7 @@ class TrainNewModel(Resource):
         model, model_name = model_training.model_selection(args["chosen_model"])
         model = model_training.train_model(X_train_encoded, y_train, model)
         model_training.save_trained_model(model, model_name)
+        
         return "model successfully trained"
 
 
@@ -77,7 +78,9 @@ class MakePredictions(Resource):
 
         X_train_encoded, y_train, X_test_encoded, y_test, encoder = data_loading.load_encoded_data()
         y_hat = model.predict(X_test_encoded)
+        y_score=model.predict.proba(X_test_encoded[:,1])
         print("ChosenModel: Accuracy score", accuracy_score(y_test, y_hat))
+        print("ChosenModel: AUC", roc_auc_score(y_test, y_score)) # need proba?
         return "run successfully"
 
 

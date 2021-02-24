@@ -1,8 +1,12 @@
 <template>
     <v-app>
+        <div>
+            <p class="header"> <u>Umfrage </u>
+             </p>
+        </div>
 
          <div>
-            <p class="header"> Sie haben die Experiment - Phase abgeschlossen!</p>
+            <p class="text"> Sie haben die Experiment - Phase abgeschlossen!</p>
             <br>
         </div>              
         <div>

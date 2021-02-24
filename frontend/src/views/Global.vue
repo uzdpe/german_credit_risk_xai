@@ -1,7 +1,7 @@
 <template>
     <v-app>
     <div>
-            <p class="header">Globale Modellerklärung mithilfe von Shapley Values aus der Spieltheorie </p>
+            <p class="header"><u>Globale Modellerklärung mithilfe von Shapley Values aus der Spieltheorie </u> </p>
         </div>
         <v-container fluid>
             <div>
@@ -52,6 +52,12 @@
             <img src="../assets/shapley.png" alt="Data_Input"   class="picture" >
         </div>
         <br><br>
+        <div>
+            <p class="text"> Gehen Sie <a href="http://localhost:8080/instance" ><b>weiter zur lokalen Erklärung</b></a>
+            </p>
+            
+
+        </div>
     </v-app>
 </template>
 

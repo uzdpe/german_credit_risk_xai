@@ -1,6 +1,8 @@
 <template>
     <v-app>
-
+        <div>
+            <p class="header">  <u>Intro </u> </p>
+        </div>
         <div>
             <p class="text"> Herzlich Willkommen zum Experiment zum Thema <b>Explainable Artificial Intelligence</b>.</p>
              
@@ -49,7 +51,7 @@
         <div>
             <p class="text"> In der Studie betrachten Sie die Risikoeinschätzung eines Kreditbewerbers, die ein Algorithmus getroffen hat.<br>
             Sie testen verschiedene Algorithmen mithilfe globaler und lokaler Erklärungen. 
-            <br>Nach dem Austesten des XAI Dashboards und erfolgt eine Umfrage. 
+            <br>Nach dem Testdurchlauf erfolgt eine Umfrage. 
             
             <br>
             </p>
@@ -76,8 +78,8 @@
             - Ich bestätige, dass ich mindestens 18 Jahre alt bin.<br>
             - Ich bestätige die Teilnahmeinformationen gelesen zu haben und bin mit der Teilnahme einverstanden. <br>
             - Meine Teilnahme erfolgt freiwillig. Ich weiß, dass ich die Möglichkeit habe, meine Teilnahme an dieser Studie jederzeit und ohne Angabe von Gründen abzubrechen, ohne dass mir daraus Nachteile entstehen.<br>
-            <br> Wenn Sie die Einführung gelesen haben und damit einverstanden sind, klicken Sie weiter auf <b>"2. Training"</b>
-            </p>
+            <br> Wenn Sie die Einführung gelesen haben und damit einverstanden sind, klicken Sie <a href="http://localhost:8080/testphase" ><b>weiter zur Testphase</b></a> </p>
+
         </div>
         <br><br><br>
     </v-app>
