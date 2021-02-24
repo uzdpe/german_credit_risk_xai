@@ -23,7 +23,8 @@ def initialize_routes(api):
     api.add_resource(GetInstances, "/get_instances")
     api.add_resource(ReturnTrainedModels, "/return_trained_models")
     api.add_resource(LocalExplanation, "/local_explanation")
-    api.add_resource(LoadDataTable, "/data_table")
+    api.add_resource(DataTable, "/data_table")
+    api.add_resource(DisplayDataTable, "/display_data_table")
 
 
 class Initialization(Resource):
@@ -139,6 +140,8 @@ class DisplayForcePlot(Resource):
         reqparse_args = reqparse.RequestParser()
         reqparse_args.add_argument("chosen_model", type=str)
         reqparse_args.add_argument("chosen_instance", type=str)  # not yet needed
+        args = reqparse_args.parse_args()
+
         directory = PATHS["03_data_outputs"]
         filename = args["chosen_model"] + "_" + "shap_force_plot.png"
 
@@ -167,10 +170,29 @@ class DisplayLimePlot(Resource):
             # return send_file(prediction_dir + args["pred_name"])   # works both
         except FileNotFoundError:
             abort(404)
-class LoadDataTable(Resource):
+
+class DataTable(Resource):
+    """Data Table"""
+    def post(self):
+        reqparse_args = reqparse.RequestParser()
+        reqparse_args.add_argument("chosen_instance", type=int)
+        args = reqparse_args.parse_args()
+
+        print(args["chosen_instance"])
+        X_test=data_loading.load_data(type="testing")
+        dataTable(X_test, chosen_instance=args["chosen_instance"])
+
+        return "data table created successfully"  
+
+class DisplayDataTable(Resource):
     """provides data table for prediction"""
     def post(self):
-        dataTable(X_test, test_instance=10)
+        reqparse_args = reqparse.RequestParser()
+        reqparse_args.add_argument("chosen_instance", type=str)
+        args = reqparse_args.parse_args()
+        directory = PATHS["03_data_outputs"]
+        filename = args["chosen_instance"] + "_" + "data_table.png"
+
 
         directory = PATHS["03_data_outputs"]
         filename = "data_table.png"

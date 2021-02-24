@@ -28,14 +28,14 @@
                         @input="local_explanation()"
                 ></v-select>
 
-                <p> Return message:  {{msg_local}} </p>
+                <p>  {{msg_local}} </p><br>
 
                 <v-btn class="button"
                    filled
                    required
-                   @click="get_limeplot(),get_forceplot()">
+                   @click="get_limeplot()">
                 SHOW LOCAL EXPLANATION
-                </v-btn>
+                </v-btn><br>
 
                 <v-col cols="12" sm="15">
                     <p> FORCEPLOT </p>
@@ -67,7 +67,7 @@
             <img src="../assets/lime.png" alt="Data_Input"   class="picture" >
         </div>
        <div>
-            <p class="text"> Gehen Sie <a href="http://localhost:8080/survey" ><b>weiter zum Ende </b></a>
+            <p class="text"> Gehen Sie weiter zum <router-link to="/survey"><b>Ende des Experiment</b></router-link>
             </p>
              
 
@@ -95,7 +95,7 @@
                 limeplot: "",
                 limeplot_url: "",
                 forceplot: "",
-                forceplot_url: "",
+                // forceplot_url: "",
                 possible_instances: ["xxx"],
                 chosen_instance: "",
                 dataset:"german_credit_dataset",

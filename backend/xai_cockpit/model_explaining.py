@@ -139,9 +139,10 @@ def explain_with_shap_global(X_train, model, model_name):
     if summary_plot:
         shap.summary_plot(shap_values,
                           X_train,
-                          # plot_type="bar",
+                           #plot_type="bar",
                           show=False,
                           max_display=10,
+                          
                           )
         plt.tight_layout()
         plt.savefig(PATHS["03_data_outputs"] + model_name + "_shap_summary_plot.png")

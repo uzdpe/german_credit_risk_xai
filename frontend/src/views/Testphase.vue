@@ -9,7 +9,7 @@
         </div>
 
         <div>
-            <p class="text">  Wir haben einen deutschen Kreditrisiko-Datensatz ausgewählt, der eine Stichprobe von n = 1000 Beobachtungen klassifiziert, ob ein Antragsteller ein gutes oder schlechtes Kreditrisiko besitzt. 
+            <p class="text">  Wir haben einen exemplarischen deutschen Kreditrisiko-Datensatz ausgewählt, der eine Stichprobe von n = 1000 Beobachtungen klassifiziert, ob ein Antragsteller ein gutes oder schlechtes Kreditrisiko besitzt. 
             Die folgende Tabelle beschreibt die Datengrundlage und gibt Aufschluss über die Variablen, die der Algorithmus verwendet und die aus Diskrimierungsgründen ausgeschlossen werden:
             </p>
         </div> 
@@ -21,7 +21,7 @@
         </div>
         <br>
         <div>
-            <p class="header"> 2.Explorative Datenanalyse </p>
+            <p class="header"> 2. Explorative Datenanalyse </p>
             <br>
         </div>
         <div>
@@ -121,15 +121,49 @@
             ></v-select>
             <br>
             <p class="response_text"> {{msg_model}} </p>
-            <br>
-            <br>
             
-
+            
         </div>
-        <br>
-        
+
         <div>
-            <p class="text">Nach Abschluss der Testphase gehen Sie  <a href="http://localhost:8080/training" ><b>weiter zum Modell Training</b></a> 
+        <p class="text"> Das Logistische Regressiondmodell besitzt eine Diskriminierungsgüte von AUC=75%.</p>
+        </div>
+        <div>
+        <img class="datatable" src="../assets/auc_logreg.png" alt="Data_Input"  >
+            
+        
+        </div>
+         <div>
+        <br>
+        <p class="header"> 4. Vorhersage</p>
+        </div>
+        <div>
+            <p class="text">Für folgenden Bewerber wird eine Vorhersage getroffen:</p>
+        </div>
+        <div>
+            <img class="datatable" src="../assets/applicant1.png" alt="Data_Input"  >
+            
+        </div>
+        <div>
+            <p class="text">Der Algorithmus hat folgende Vorhersage getroffen:</p>
+        </div> 
+        <div>
+            <img class="datatable" src="../assets/output.png" alt="Data_Input"  >
+            
+        </div>
+        
+        <br>
+        <p class="header"> 5. Erklärung</p>
+        <div>
+            <p class="text">Koeffizienten der logistischen Regression:</p>
+        </div>
+        <div>
+            <img class="picture" src="../assets/logreg.png" alt="Data_Input"  >
+            
+        </div>
+               
+        <div>
+            <p class="text">Nach Abschluss der Testphase gehen Sie  <router-link to="/training" ><b>weiter zum Modell Training</b></router-link> 
             </p>
         </div>
 

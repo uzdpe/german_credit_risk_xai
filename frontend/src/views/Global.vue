@@ -34,7 +34,7 @@
              </p>
         </div>       
         <div>  
-            <p class="text"> Interpretation: Ein hoher Wert für Checking Account führt zu einer Erhöhung der Zuordnung zur Klasse 1(=gutes Risiko)
+            <p class="text"> Interpretation: Ein hoher Wert für Checking Account (3 = hoch) führt zu einer Erhöhung der Zuordnung zur Klasse 1 ( = gutes Risiko).
 
             </p>
         </div>
@@ -53,7 +53,7 @@
         </div>
         <br><br>
         <div>
-            <p class="text"> Gehen Sie <a href="http://localhost:8080/instance" ><b>weiter zur lokalen Erklärung</b></a>
+            <p class="text"> Gehen Sie <router-link to="/instance"><b>weiter zur lokalen Erklärung</b></router-link>
             </p>
             
 

@@ -45,10 +45,7 @@
             
         </v-container>
 
-        <div>
-            <p class="header">  2. Vorhersage </p>
-            <br>
-        </div>
+        
 
         <div>
             <p class="text">Für folgenden Bewerber wird eine Vorhersage getroffen.</p>
@@ -63,16 +60,20 @@
         <br>
         <br>
         <div>
+            <p class="header">  2. Vorhersage </p>
+            <br>
+        </div>
+        <div>
             <p class="text">Der Algorithmus hat folgende Vorhersage getroffen:</p>
         </div> 
         <div>
-            <img class="datatable" src="../assets/output.png" alt="Data_Input"  >
+            <img class="datatable" src="../assets/xgboost.png" alt="Data_Input"  >
             
         </div>
         <br>
         <br>
         <div>
-            <p class="text"> Gehen Sie <a href="http://localhost:8080/global" ><b>weiter zur globalen Erklärung</b></a>
+            <p class="text"> Gehen Sie <router-link to="/global" ><b>weiter zur globalen Erklärung</b></router-link>
             </p>
             
 
@@ -124,7 +125,7 @@
             
             data_table() {
                 // initialize the data_table
-                axios.post("http://127.0.0.1:5000/data_table", {
+                axios.post("http://127.0.0.1:5000/display_data_table", {
                     chosen_instance: this.chosen_instance,
                 },{responseType: "blob"})
                     .then((response) => {

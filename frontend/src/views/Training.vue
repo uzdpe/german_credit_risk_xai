@@ -47,9 +47,23 @@
 
         </div>
         <br>
+       <div>
+        <img class="datatable" src="../assets/auc_xgboost.png" alt="Data_Input"  >
+            
+        
+        </div>
+        <br>
+        <br>
+        <div>
+        <p class="header" > Über xgboost </p>
+        <p class="text">XGBoost ist eine frei verfügbare Bibliothek mit Open-Source-Lizenz. Sie ermöglicht überwachtes maschinelles Lernen mit dem Boosted-Tree-Algorithmus, einem Baumalgorithmus mit Gradient Boosting. Mithilfe von XGBoost lassen sich Zielvariablen genauer bestimmen, indem mehrere einfachere und schwächere Modelle miteinander kombiniert und Schätzungen getroffen werden. XGBoost ist optimiert für eine hohe Rechenleistung und Modell-Performance, da durch die Verwendung von Blockstrukturen mehrere Baummodelle parallelisiert werden.
+        <br>Aufgrund seiner Komplexität wird dieser als <b>„Black-Box“ - Algorithmus</b> bezeichnet.</p>
+
+        </div>
+        <br>
         
         <div>
-            <p class="text"> Gehen Sie weiter auf <a href="http://localhost:8080/prediction" ><b>weiter zur Modellvorhersage (Prediction)</b></a>
+            <p class="text"> Gehen Sie weiter auf <router-link to="prediction" ><b>weiter zur Modellvorhersage (Prediction)</b></router-link>
             </p>
             
 
@@ -76,8 +90,7 @@
                 trained_models:"",
 
                 chosen_model: "",
-                possible_models: ["Extreme Gradient Boosting", "Logistic Regression", "Decision Tree",
-                "Random Forest", "Support Vector Machine"],
+                possible_models: ["Extreme Gradient Boosting"],
             }
         },
 

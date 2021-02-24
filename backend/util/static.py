@@ -20,6 +20,28 @@ PATHS = {
 }
 
 
+# dataset = {
+#     "german_credit_dataset": {
+#         "dataset_name": "credit_risk.csv",
+#         "categorical_features_indices": [0, 2, 3, 5, 6, 8, 9, 10, 12, 14, 15, 17, 19, 20],
+#         "numerical_features_indices": [1, 4, 7, 11, 13, 16, 18],
+#         "num_features": ["Kreditdauer_in_Monaten", "Kredithöhe_in_€", "Tilgungsrate_in_%_des_verfügbaren_Einkommen",
+#                          "Derzeitiger_Wohnort_seit", "Alter_in_Jahren", "Anzahl_bestehender_Kredite_bei_dieser_Bank",
+#                          "Anzahl_unterhaltspflichtiger_Personen"],
+#         "cat_features": ["Status_Girokonto", "Kredithistorie", "Verwendungszweck", "Sparkonto_/_Anleihen",
+#                          "Aktuelle_Beschäftigung_seit_in_Jahren", "Geschlecht", "Familienstand",
+#                          "Sonstige Schuldner / Bürgen",
+#                          "Eigentum", "Andere_Ratenzahlungspläne", "Wohnsituation", "Arbeitsstelle", "Telefonanschluss",
+#                          "Ausländischer_Arbeitnehmer"],
+#         "label_indices": [21],
+#     }
+# }
+
+
+params = {
+    "dataset": "german_credit_dataset",
+}
+
 dataset = {
     "german_credit_dataset": {
         "dataset_name": "credit_risk.csv",
@@ -36,10 +58,4 @@ dataset = {
         "label_indices": [21],
     }
 }
-
-
-params = {
-    "dataset": "german_credit_dataset",
-}
-
 

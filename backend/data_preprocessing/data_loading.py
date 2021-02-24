@@ -209,8 +209,8 @@ def one_hot_encoder_old(df_credit, nan_as_category=False):
 def data_exploration(df_credit):
     """Data exploration with seaborn"""
 
-    # ax = sns.countplot(x="Risk",hue="Risk", data=df_credit)
-    # plt.show()
+    ax = sns.countplot(x="Risk",hue="Risk", data=df_credit)
+    plt.show()
     
     # ax = sns.countplot(data=df_credit, x="Sex", hue="Risk")
     # plt.show()
@@ -229,8 +229,8 @@ def data_exploration(df_credit):
 
     # ax = sns.countplot(data=df_credit, x="Saving accounts", hue="Risk")
     # plt.show()
-    ax = sns.countplot(data=df_credit, x="Checking account", hue="Risk")
-    plt.show()
+    #ax = sns.countplot(data=df_credit, x="Checking account", hue="Risk")
+    #plt.show()
 
     # ax = sns.pairplot(data=df_credit, hue="Risk", kind="kde")
     # ax.savefig("pairplot_all.png")
@@ -240,6 +240,6 @@ def data_exploration(df_credit):
     # sns.heatmap(df_credit.astype(float).corr(),linewidths=0.1,vmax=1.0,
     # square=True,  linecolor='white', annot=True)
     # plt.show()
-    sns.countplot(x="Housing", hue="Risk", data=df_credit)
-    plt.show()
+    # sns.countplot(x="Housing", hue="Risk", data=df_credit)
+    #plt.show()
 
